@@ -1,11 +1,11 @@
 import { Text } from "@rneui/themed";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { View } from "react-native";
 
 const CryptoDetailAbout = () => {
     return (
-        <SafeAreaView style={{ flex: 1, backgroundColor: '#252836' }}>
+        <View style={{ flex: 1, backgroundColor: '#252836' }}>
             <Text>Crypto About View</Text>
-        </SafeAreaView>
+        </View>
     );
 }
 

@@ -1,11 +1,11 @@
 import { Text } from "@rneui/themed";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { View } from "react-native";
 
 const Favorites = () => {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#252836' }}>
+    <View style={{ flex: 1, backgroundColor: '#252836' }}>
       <Text>Favorites</Text>
-    </SafeAreaView>
+    </View>
   );
 };
 

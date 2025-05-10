@@ -2,6 +2,7 @@ import { Text } from "@rneui/themed";
 import { View } from "react-native";
 
 
+
 const HomeScreen = () => {
     return (
         <View style={{ flex: 1, backgroundColor: '#252836' }}>
