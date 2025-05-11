@@ -16,6 +16,6 @@ export const useGetCoins = (limit = 100) => {
             // Devolvemos el índice de inicio para la siguiente página
             return currentDataCount;
         },
-        initialPageParam: 0
+        initialPageParam: 0,
     });
 };
