@@ -22,7 +22,7 @@ const TabLayout = () => {
             },
         }}>
             <Tabs.Screen
-                name="home/home"
+                name="home/Home"
                 options={{
                     title: "Home",
                     headerTitle: "Home",
@@ -37,7 +37,7 @@ const TabLayout = () => {
                 }}
             />
             <Tabs.Screen
-                name="favorites/favorites"
+                name="favorites/Favorites"
                 options={{
                     title: "Favorites",
                     headerTitle: "Favorites",
@@ -52,7 +52,7 @@ const TabLayout = () => {
                 }}
             />
             <Tabs.Screen
-                name="about/about"
+                name="about/About"
                 options={{
                     title: "About",
                     headerTitle: "About",
