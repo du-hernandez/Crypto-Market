@@ -1,4 +1,4 @@
-import { useQuery, useInfiniteQuery, useQueryClient } from '@tanstack/react-query';
+import { useQuery, useInfiniteQuery } from '@tanstack/react-query';
 import { apiService } from '@services/.';
 
 export const useGetCoins = (limit = 100) => {
@@ -19,3 +19,11 @@ export const useGetCoins = (limit = 100) => {
         initialPageParam: 0,
     });
 };
+
+export const useGetCoinDetail = (id: string) => {
+    return useQuery({
+        queryKey: ['coin-detail', JSON.stringify(id)],
+        queryFn: async () => await apiService.getCoinDetails(id),
+        enabled: !!id
+    });
+}

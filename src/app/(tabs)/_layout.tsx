@@ -1,8 +1,6 @@
 import { Tabs } from "expo-router";
 import { AntDesign } from "@expo/vector-icons";
 
-import { Platform } from "react-native";
-
 
 const TabLayout = () => {
 
@@ -11,7 +9,7 @@ const TabLayout = () => {
             headerShown: false,
             tabBarActiveTintColor: "#FFF",
             tabBarStyle: {
-                backgroundColor: Platform.OS === "ios" ? "transparent" : "#252836",
+                backgroundColor: "#252836",
                 borderTopWidth: 0,
                 paddingTop: 15,
             },
@@ -22,7 +20,7 @@ const TabLayout = () => {
             },
         }}>
             <Tabs.Screen
-                name="home/Home"
+                name="index"
                 options={{
                     title: "Home",
                     headerTitle: "Home",
@@ -37,7 +35,7 @@ const TabLayout = () => {
                 }}
             />
             <Tabs.Screen
-                name="favorites/Favorites"
+                name="favorites"
                 options={{
                     title: "Favorites",
                     headerTitle: "Favorites",
@@ -52,7 +50,7 @@ const TabLayout = () => {
                 }}
             />
             <Tabs.Screen
-                name="about/About"
+                name="about"
                 options={{
                     title: "About",
                     headerTitle: "About",

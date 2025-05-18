@@ -1,25 +1,33 @@
+import { memo, useEffect } from "react";
 import { Text } from "@rneui/themed";
 import { View } from "react-native";
 import { TouchableOpacity } from "react-native";
 import styles from "./CoinCardStyles";
 import { formatNumber } from "@/utils";
 
+
 interface CoinCardProps {
     coin: any;
+    onPress?: () => void;
 }
 
-const CoinCard = ({ coin }: CoinCardProps) => {
+const CoinCard = ({ coin, onPress }: CoinCardProps) => {
 
-    const isPositiveChange = parseFloat(coin.percent_change_24h) >= 0;
+    let isPositiveChange = null;
+
+    useEffect(() => {
+        isPositiveChange = parseFloat(coin.percent_change_24h) >= 0;
+    }, []);
 
     return (
         <TouchableOpacity
             style={styles.card}
-        // onPress={() => navigation.navigate('Detail', {
-        //     id: item.id,
-        //     title: item.name,
-        //     symbol: item.symbol
-        // })}
+            // onPress={() => navigation.navigate('Detail', {
+            //     id: item.id,
+            //     title: item.name,
+            //     symbol: item.symbol
+            // })}
+            onPress={onPress}
         >
             <View style={styles.coinHeader}>
                 <View style={{ flex: 2, }}>
@@ -54,4 +62,4 @@ const CoinCard = ({ coin }: CoinCardProps) => {
     )
 }
 
-export default CoinCard;
+export default memo(CoinCard);

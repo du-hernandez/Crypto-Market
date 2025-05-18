@@ -16,11 +16,25 @@ export const theme = createTheme({
         Text: {
             style: {
                 color: '#FFF',
-                fontFamily: 'Poppins-Regular',
+                fontFamily: 'Nunito_400Regular',
                 fontSize: 16,
-                lineHeight: 24,
             }
         },
+        Input: {
+            style: {
+                color: '#FFF',
+                fontFamily: 'Nunito_400Regular',
+                fontSize: 16,
+            }
+        },
+        ButtonGroup: {
+            textStyle: {
+                fontFamily: 'Nunito_400Regular',
+            },
+            selectedTextStyle: {
+                color: '#FFF',
+            }
+        }
     },
 
     lightColors: {
