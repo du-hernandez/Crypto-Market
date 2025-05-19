@@ -21,6 +21,21 @@ export const apiService = {
         }
     },
 
+    /**
+     * Fetches details for multiple coins by their IDs.
+     * @param ids A comma-separated string of coin IDs (e.g., "90,80,32,90").
+     * @returns The details of the specified coins.
+     */
+    getMultipleCoinDetails: async (ids: string) => {
+        try {
+            const response = await api.get(`/ticker/?id=${ids}`);
+            return response.data || undefined;
+        } catch (error) {
+            console.error('Error fetching coin details:', error);
+            throw error;
+        }
+    },
+
     getCoinMarkets: async (id: string) => {
         try {
             const response = await api.get(`/coin/markets/?id=${id}`);

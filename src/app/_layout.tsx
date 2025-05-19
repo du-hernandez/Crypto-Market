@@ -7,6 +7,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { theme } from "@/utils/theme";
 import { ThemeProvider } from "@rneui/themed";
+import { FavoriteCoinsProvider } from '@/context/FavoriteCoins';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -32,32 +33,34 @@ const RootLayout = () => {
         <QueryClientProvider client={queryClient}>
             <SafeAreaView style={{ flex: 1, backgroundColor: '#252836' }}>
                 <ThemeProvider theme={theme}>
-                    <Stack screenOptions={{
-                        headerStyle: { backgroundColor: '#252836' },
-                        headerTintColor: "#FFF",
-                    }}>
-                        <Stack.Screen
-                            name="(tabs)"
-                            options={{
-                                headerShown: false,
-                                headerTitle: "Home",
-                            }}
-                        />
-                        <Stack.Screen
-                            name="coin/coin-detail/[id]"
-                            options={{
-                                headerShown: true,
-                                headerTitle: "Coin Detail",
-                            }}
-                        />
-                        <Stack.Screen
-                            name="coin/coin-list"
-                            options={{
-                                headerTitle: "Coin List",
-                                headerShown: true
-                            }}
-                        />
-                    </Stack>
+                    <FavoriteCoinsProvider>
+                        <Stack screenOptions={{
+                            headerStyle: { backgroundColor: '#252836' },
+                            headerTintColor: "#FFF",
+                        }}>
+                            <Stack.Screen
+                                name="(tabs)"
+                                options={{
+                                    headerShown: false,
+                                    headerTitle: "Home",
+                                }}
+                            />
+                            <Stack.Screen
+                                name="coin/coin-detail/[id]"
+                                options={{
+                                    headerShown: true,
+                                    headerTitle: "Coin Detail",
+                                }}
+                            />
+                            <Stack.Screen
+                                name="coin/coin-list"
+                                options={{
+                                    headerTitle: "Coin List",
+                                    headerShown: true
+                                }}
+                            />
+                        </Stack>
+                    </FavoriteCoinsProvider>
                 </ThemeProvider>
             </SafeAreaView>
         </QueryClientProvider>

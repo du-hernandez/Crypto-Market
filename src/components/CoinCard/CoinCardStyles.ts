@@ -4,7 +4,6 @@ const styles = StyleSheet.create({
     card: {
         backgroundColor: '#fff',
         borderRadius: 8,
-        padding: 16,
         marginBottom: 16,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
@@ -13,10 +12,11 @@ const styles = StyleSheet.create({
         elevation: 2,
     },
     coinHeader: {
-        flexDirection: 'row',
-        // justifyContent: 'space-between',
+        flex: 1,
+        flexDirection: 'column',
         alignItems: 'center',
-        marginBottom: 12,
+        paddingVertical: 20,
+        paddingHorizontal: 10
     },
     symbol: {
         fontSize: 18,
@@ -43,6 +43,8 @@ const styles = StyleSheet.create({
         color: '#F44336',
     },
     statsRow: {
+        flex: 1,
+        width: '100%',
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingTop: 8,

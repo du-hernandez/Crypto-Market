@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import {
     View,
     FlatList,
@@ -7,18 +7,25 @@ import {
     ActivityIndicator,
     RefreshControl,
 } from "react-native";
-import Animated, { useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated'
 import { Text } from "@rneui/themed";
+import Animated, {
+    useAnimatedStyle,
+    useSharedValue,
+    withSpring
+} from 'react-native-reanimated'
 import { useRouter } from "expo-router";
 import { useGetCoins } from "@/hooks/useApi";
 import CoinCard from "@/components/CoinCard/CoinCard";
 import Filter from "@components/Filter/Filter";
+import { useFavoriteCoins } from "@/context/FavoriteCoins";
 
 const CoinList = () => {
 
     const [dataFilter, setDataFilter] = useState<any[]>([]);
     const [isFiltering, setIsFiltering] = useState(false);
     const [headerHeiht, setHeaderHeight] = useState(0);
+
+    const { favoriteCoins, setFavoritesCoins } = useFavoriteCoins();
 
     const scrollYRef = useRef(0)
     const top = useSharedValue(0);
@@ -54,15 +61,6 @@ const CoinList = () => {
         if (!data) return [];
         return data.pages.flatMap(page => page.data || []);
     }, [data]);
-
-    const renderItem = ({ item }: any) => {
-        return (
-            <CoinCard
-                coin={item}
-                onPress={() => router.navigate(`coin/coin-detail/${item.id}`)}
-            />
-        );
-    };
 
     const renderFooter = () => {
         if (!isFetchingNextPage) return null;
@@ -112,6 +110,21 @@ const CoinList = () => {
         setDataFilter(result);
     }
 
+    const handleCoinPress = (coinId: string) => {
+        router.navigate(`coin/coin-detail/${coinId}`);
+    }
+
+    const renderItem = ({ item }: any) => {
+        return (
+            <CoinCard
+                isFavorite={favoriteCoins.includes(item.id)}
+                setFavoritesCoins={setFavoritesCoins}
+                coin={item}
+                onPress={handleCoinPress} // Pasamos la función memoizada
+            />
+        );
+    }
+
     const dataToRender = isFiltering ? dataFilter : coins;
 
     return (
@@ -144,6 +157,7 @@ const CoinList = () => {
                 // ListHeaderComponent={() => <Filter onFilter={onFilter} />}
                 ListFooterComponent={renderFooter}
                 scrollEventThrottle={10}
+                initialNumToRender={10}
                 onScroll={e => {
                     const y = e.nativeEvent.contentOffset.y;
 

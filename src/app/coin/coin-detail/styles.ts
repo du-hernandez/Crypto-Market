@@ -38,15 +38,10 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         paddingVertical: 5,
     },
-    star: {
-        alignItems: 'center',
-        justifyContent: 'center',
+    favoriteContainer: {
         position: 'absolute',
         top: 170,
         left: (winDimensions.width / 2) - 20,
-        backgroundColor: 'white',
-        borderRadius: 50,
-        padding: 5
     }
 })
 

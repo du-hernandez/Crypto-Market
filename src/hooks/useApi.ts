@@ -24,6 +24,14 @@ export const useGetCoinDetail = (id: string) => {
     return useQuery({
         queryKey: ['coin-detail', JSON.stringify(id)],
         queryFn: async () => await apiService.getCoinDetails(id),
-        enabled: !!id
+        enabled: id != ''
+    });
+}
+
+export const useGetMultipleCoinDetail = (ids: string[]) => {
+    return useQuery({
+        queryKey: ['coin-multiple-detail', JSON.stringify(ids)],
+        queryFn: async () => await apiService.getCoinDetails(ids.join(',')),
+        enabled: ids.length > 0
     });
 }

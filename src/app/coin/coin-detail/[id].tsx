@@ -1,17 +1,21 @@
 import { ActivityIndicator, ScrollView, StyleSheet, View } from "react-native"
 import { useLocalSearchParams } from 'expo-router';
-import { AntDesign } from "@expo/vector-icons";
 import { Text } from "@rneui/themed"
-import { useGetCoinDetail } from "@/hooks/useApi";
-import styles from "./styles";
 import { LinearGradient } from "expo-linear-gradient";
+import { useGetCoinDetail } from "@/hooks/useApi";
 import { formatNumber } from "@/utils";
 import CoinDetailItem from "@/components/CoinDetailItem/CoinDetailItem";
+import FavoriteCoin from "@/components/FavoriteCoin/FavoriteCoin";
+
+import styles from "./styles";
+import { useFavoriteCoins } from "@/context/FavoriteCoins";
 
 const CoinDetail = () => {
 
     const { id: coinId } = useLocalSearchParams();
     const { data, isLoading, isError, error } = useGetCoinDetail(String(coinId));
+
+    const { favoriteCoins, setFavoritesCoins } = useFavoriteCoins();
 
     if (isLoading) {
         return (
@@ -91,8 +95,12 @@ const CoinDetail = () => {
                             {formatNumber(coin.price_usd)} USD
                         </Text>
                     </LinearGradient>
-                    <View style={styles.star}>
-                        <AntDesign name="star" size={40} color='#E24224' />
+                    <View style={styles.favoriteContainer} >
+                        <FavoriteCoin
+                            setFavoritesCoins={setFavoritesCoins}
+                            isFavorite={favoriteCoins.includes(String(coinId))}
+                            coinId={String(coinId)}
+                        />
                     </View>
                     <View style={{ flex: 3 }}>
                         <CoinDetailItem title='Posición en el mercado' value={coin.rank} />
