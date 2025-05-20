@@ -28,10 +28,29 @@ export const useGetCoinDetail = (id: string) => {
     });
 }
 
-export const useGetMultipleCoinDetail = (ids: string[]) => {
+export const useGetMultipleCoinDetail = (ids: string[], shouldFetch: boolean = true) => {
+    // Evita ejecución con un queryKey vacío
+    // if (!shouldFetch || ids.length === 0) {
+    //     return {
+    //         data: [],
+    //         isLoading: false,
+    //         isError: false,
+    //         error: null,
+    //         refetch: async () => Promise.resolve({ data: [] }) // Retorna una promesa resuelta
+    //     };
+    // }
     return useQuery({
-        queryKey: ['coin-multiple-detail', JSON.stringify(ids)],
-        queryFn: async () => await apiService.getCoinDetails(ids.join(',')),
-        enabled: ids.length > 0
+        queryKey: ['coin-multiple-detail', ids.join(',')],
+        queryFn: async () => {
+            const result = await apiService.getMultipleCoinDetails(ids.join(','));
+
+            if (!result) {
+              return [];
+            }
+
+            return result;
+        },
+        enabled: ids.length > 0 && shouldFetch,
+        // 5 minutes of cache (1000 ms * 60 s * 5 min)
     });
 }

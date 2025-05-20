@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import {
     View,
     FlatList,
@@ -194,6 +194,6 @@ const styles = StyleSheet.create({
         fontSize: 16,
         color: '#FFF',
     }
-})
+});
 
 export default CoinList;

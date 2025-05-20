@@ -7,7 +7,7 @@ interface FavoriteCoinsContextProps {
 
 const FavoriteCoinsContext = createContext<FavoriteCoinsContextProps>({
   favoriteCoins: [],
-  setFavoritesCoins: (coinId: string) => null
+  setFavoritesCoins: (coinId: string) => {}
 });
 
 export const FavoriteCoinsProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {

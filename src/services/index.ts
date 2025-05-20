@@ -29,7 +29,7 @@ export const apiService = {
     getMultipleCoinDetails: async (ids: string) => {
         try {
             const response = await api.get(`/ticker/?id=${ids}`);
-            return response.data || undefined;
+            return response.data || [];
         } catch (error) {
             console.error('Error fetching coin details:', error);
             throw error;
