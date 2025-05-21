@@ -18,6 +18,7 @@ import { useGetCoins } from "@/hooks/useApi";
 import CoinCard from "@/components/CoinCard/CoinCard";
 import Filter from "@components/Filter/Filter";
 import { useFavoriteCoins } from "@/context/FavoriteCoins";
+import { Colors } from "@/utils/colors";
 
 const CoinList = () => {
 
@@ -128,7 +129,7 @@ const CoinList = () => {
     const dataToRender = isFiltering ? dataFilter : coins;
 
     return (
-        <View style={{ flex: 1, backgroundColor: '#252836' }}>
+        <View style={{ flex: 1, backgroundColor: Colors.primary }}>
             <View style={{ position: 'relative' }}>
                 <Animated.View
                     onLayout={e => setHeaderHeight(e.nativeEvent.layout.height)}
@@ -187,7 +188,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         padding: 20,
-        backgroundColor: '#252836'
+        backgroundColor: Colors.primary
     },
     loadingText: {
         marginTop: 10,

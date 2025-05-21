@@ -1,3 +1,4 @@
+import { Colors } from '@/utils/colors';
 import { StyleSheet, Dimensions } from 'react-native';
 
 const winDimensions = Dimensions.get('window');
@@ -5,7 +6,7 @@ const winDimensions = Dimensions.get('window');
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#252836',
+        backgroundColor: Colors.primary,
         flexDirection: 'column',
     },
     footerText: {
@@ -18,7 +19,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         padding: 20,
-        backgroundColor: '#252836'
+        backgroundColor: Colors.primary
     },
     loadingText: {
         marginTop: 10,

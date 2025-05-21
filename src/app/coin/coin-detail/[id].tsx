@@ -9,6 +9,7 @@ import FavoriteCoin from "@/components/FavoriteCoin/FavoriteCoin";
 
 import styles from "./styles";
 import { useFavoriteCoins } from "@/context/FavoriteCoins";
+import { Colors } from "@/utils/colors";
 
 const CoinDetail = () => {
 
@@ -45,16 +46,16 @@ const CoinDetail = () => {
     const coin = data[0];
 
     return (
-        <View style={{ flex: 1, backgroundColor: '#252836' }}>
+        <View style={{ flex: 1, backgroundColor: Colors.primary }}>
             <ScrollView>
                 <View
                 // Background Linear Gradient
-                // colors={['#E24224', '#252836']}
+                // colors={['#E24224', Colors.primary]}
                 // style={{ flex: 1 }}
                 >
 
                     <LinearGradient
-                        colors={['#252836', '#E24224']}
+                        colors={[Colors.primary, '#E24224']}
                         style={{
                             // flex: 1,
                             // alignSelf: 'flex-start',

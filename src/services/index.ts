@@ -46,7 +46,7 @@ export const apiService = {
         }
     },
 
-    getGlobalInfo: async () => {
+    getGlobalCoinInfo: async () => {
         const response = await api.get('/global/');
         return response.data || undefined
     }

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { View } from 'react-native';
 import { ButtonGroup, Input, Text } from '@rneui/themed';
+import { Colors } from '@/utils/colors';
 
 interface FilterProps {
     onFilter: (value: string, filterParam: string) => void;
@@ -54,7 +55,7 @@ const Filter = ({ onFilter, numResults = 0 }: FilterProps) => {
                 selectedIndex={groupIndex}
                 onPress={onChangeParam}
                 containerStyle={{ marginBottom: 20 }}
-                selectedButtonStyle={{ backgroundColor: '#252836' }}
+                selectedButtonStyle={{ backgroundColor: Colors.primary }}
                 selectedTextStyle={{ color: '#FFF' }}
             />
             <Input

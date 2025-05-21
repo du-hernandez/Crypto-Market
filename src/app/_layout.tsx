@@ -8,6 +8,7 @@ import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { theme } from "@/utils/theme";
 import { ThemeProvider } from "@rneui/themed";
 import { FavoriteCoinsProvider } from '@/context/FavoriteCoins';
+import { Colors } from '@/utils/colors';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -31,11 +32,11 @@ const RootLayout = () => {
 
     return (
         <QueryClientProvider client={queryClient}>
-            <SafeAreaView style={{ flex: 1, backgroundColor: '#252836' }}>
+            <SafeAreaView style={{ flex: 1, backgroundColor: Colors.primary }}>
                 <ThemeProvider theme={theme}>
                     <FavoriteCoinsProvider>
                         <Stack screenOptions={{
-                            headerStyle: { backgroundColor: '#252836' },
+                            headerStyle: { backgroundColor: Colors.primary },
                             headerTintColor: "#FFF",
                         }}>
                             <Stack.Screen

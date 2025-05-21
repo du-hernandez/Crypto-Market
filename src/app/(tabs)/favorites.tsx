@@ -9,6 +9,7 @@ import CoinCard from "@/components/CoinCard/CoinCard";
 import { useFavoriteCoins } from "@/context/FavoriteCoins";
 import { Text } from "@rneui/themed";
 import { useCallback, useState } from "react";
+import { Colors } from "@/utils/colors";
 
 const Favorites = () => {
 
@@ -69,7 +70,7 @@ const Favorites = () => {
   }
 
   return (
-    <View style={{ flex: 1, backgroundColor: '#252836' }}>
+    <View style={{ flex: 1, backgroundColor: Colors.primary }}>
       <FlatList
         data={coinData || []}
         renderItem={renderItem}
@@ -91,7 +92,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
-    backgroundColor: '#252836'
+    backgroundColor: Colors.primary
   },
   loadingText: {
     marginTop: 10,

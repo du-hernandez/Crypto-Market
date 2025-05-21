@@ -1,5 +1,6 @@
 import { Tabs } from "expo-router";
 import { AntDesign } from "@expo/vector-icons";
+import { Colors } from "@/utils/colors";
 
 
 const TabLayout = () => {
@@ -9,7 +10,7 @@ const TabLayout = () => {
             headerShown: false,
             tabBarActiveTintColor: "#FFF",
             tabBarStyle: {
-                backgroundColor: "#252836",
+                backgroundColor: Colors.primary,
                 borderTopWidth: 0,
                 paddingTop: 15,
             },
