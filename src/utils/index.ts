@@ -6,11 +6,22 @@
  * If 
  */
 
-export const formatNumber = (num: string) => {
+
+export const formatNumber = (num: string): string => {
     if (!num) return '0';
-    return parseFloat(num) >= 1e9
-        ? (parseFloat(num) / 1e9).toFixed(2) + 'B'
-        : parseFloat(num) >= 1e6
-            ? (parseFloat(num) / 1e6).toFixed(2) + 'M'
-            : parseFloat(num).toFixed(2);
+
+    const parsedNum = parseFloat(num);
+
+    const options: Intl.NumberFormatOptions = {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+    };
+
+    if (parsedNum >= 1e9) {
+        return (parsedNum / 1e9).toLocaleString(undefined, options) + 'B';
+    } else if (parsedNum >= 1e6) {
+        return (parsedNum / 1e6).toLocaleString(undefined, options) + 'M';
+    } else {
+        return parsedNum.toLocaleString(undefined, options);
+    }
 };
