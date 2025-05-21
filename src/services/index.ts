@@ -48,6 +48,6 @@ export const apiService = {
 
     getGlobalCoinInfo: async () => {
         const response = await api.get('/global/');
-        return response.data || undefined
+        return response.data || []
     }
 }
