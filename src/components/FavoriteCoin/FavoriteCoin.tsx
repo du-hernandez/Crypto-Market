@@ -3,6 +3,7 @@ import { memo } from 'react';
 import { AntDesign } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import styles from './FavoriteCoinStyle';
+import { Colors } from '@/utils/colors';
 
 interface FavoriteCoinProps {
     isFavorite: boolean;
@@ -16,12 +17,12 @@ const FavoriteCoin = ({ isFavorite, setFavoritesCoins, coinId, iconSize = 30, }:
     // const isFavorite = favoriteCoins.includes(coinId);
 
     return (
-        <TouchableOpacity onPress={() => setFavoritesCoins(coinId)}>
+        <TouchableOpacity onPress={() => setFavoritesCoins(coinId)} style={{ width: iconSize + 5, height: iconSize + 5 }}>
             <LinearGradient
-                colors={isFavorite ? ['yellow', '#E24224'] : ['#F4F4F4', '#B0B0B2']}
+                colors={isFavorite ? ['yellow', Colors.secondary] : ['#F4F4F4', '#B0B0B2']}
                 style={styles.star}
             >
-                <AntDesign name={isFavorite ? 'heart' : 'hearto'} size={iconSize} color={isFavorite ? '#E24224' : 'gray'} />
+                <AntDesign name={isFavorite ? 'heart' : 'hearto'} size={iconSize - 5} color={isFavorite ? Colors.secondary : 'gray'} />
             </LinearGradient>
         </TouchableOpacity>
     )

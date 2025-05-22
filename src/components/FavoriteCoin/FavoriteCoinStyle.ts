@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 50,
-        padding: 10
+        padding: 5
     }
 });
 

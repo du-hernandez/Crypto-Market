@@ -50,12 +50,12 @@ const CoinDetail = () => {
             <ScrollView>
                 <View
                 // Background Linear Gradient
-                // colors={['#E24224', Colors.primary]}
+                // colors={[Colors.secondary, Colors.primary]}
                 // style={{ flex: 1 }}
                 >
 
                     <LinearGradient
-                        colors={[Colors.primary, '#E24224']}
+                        colors={[Colors.primary, Colors.secondary]}
                         style={{
                             // flex: 1,
                             // alignSelf: 'flex-start',

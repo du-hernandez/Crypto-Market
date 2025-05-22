@@ -3,22 +3,19 @@ import {
     StyleSheet,
     View,
 } from "react-native";
-import { Text, Button } from "@rneui/themed";
-import { useRouter } from "expo-router";
+import { Text } from "@rneui/themed";
 import { useGetGlobalCoinInfo } from "@/hooks/useApi";
 import { Colors } from "@/utils/colors";
 import { formatNumber } from "@/utils";
+import CoinListOverview from "@/components/CoinListOverview/CoinListOverview";
 
 const HomeScreen = () => {
-
-    const router = useRouter();
 
     const {
         data,
         isLoading,
         isError,
-        error,
-        refetch
+        error
     } = useGetGlobalCoinInfo();
 
     if (isLoading) {
@@ -43,9 +40,17 @@ const HomeScreen = () => {
 
     return (
         <View style={{ flex: 1, backgroundColor: Colors.primary }}>
-            <Text style={{ fontWeight: 'bold', fontSize: 30, textAlign: 'center', marginVertical: 20 }}>Crypto Market Overview</Text>
+            <Text style={styles.titleStyles}>Crypto Market Overview</Text>
+            <View
+                style={{
+                    marginHorizontal: 0,
+                    marginBottom: 20,
+                }}
+            >
+                <CoinListOverview />
+            </View>
             <ScrollView style={{ backgroundColor: 'rgba(255, 255, 255, 0.03)' }}>
-                <View style={{ flexDirection: 'column', marginHorizontal: 20 }}>
+                <View style={{ flexDirection: 'column', marginHorizontal: 20, marginBottom: 20 }}>
                     <View style={styles.containerCard50}>
                         <View style={styles.cardStyles50}>
                             <Text style={styles.subtitleText}>
@@ -113,20 +118,6 @@ const HomeScreen = () => {
                         </View>
                     </View>
                 </View>
-                <Button
-                    title="Basic Button"
-                    buttonStyle={{
-                        backgroundColor: 'rgba(78, 116, 289, 1)',
-                        borderRadius: 3,
-                    }}
-                    containerStyle={{
-                        width: 200,
-                        marginHorizontal: 50,
-                        marginVertical: 10,
-                    }}
-                    onPress={() => router.push('coin/coin-list')}
-                />
-
             </ScrollView>
         </View >
     );
@@ -175,6 +166,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderRadius: 20,
         padding: 10,
+    },
+    titleStyles: {
+        fontWeight: 'bold',
+        fontSize: 30,
+        textAlign: 'center',
+        marginVertical: 20
     }
 })
 

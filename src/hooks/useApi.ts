@@ -35,7 +35,7 @@ export const useGetMultipleCoinDetail = (ids: string[], shouldFetch: boolean = t
             const result = await apiService.getMultipleCoinDetails(ids.join(','));
 
             if (!result) {
-              return [];
+                return [];
             }
 
             return result;
@@ -48,8 +48,26 @@ export const useGetMultipleCoinDetail = (ids: string[], shouldFetch: boolean = t
 export const useGetGlobalCoinInfo = () => {
     return useQuery({
         queryKey: ['coin-global'],
-        queryFn: async () => await apiService.getGlobalCoinInfo(),
+        queryFn: async () => {
+            const result = await apiService.getGlobalCoinInfo();
+            return result[0]
+        },
         enabled: true,
-        staleTime: 1000 * 60 * 1
+        // staleTime: 1000 * 60 *1,
+        refetchInterval: 1000 * 10,
     });
 }
+
+export const useGetOverviewCoins = (limit = 10) => {
+
+    return useQuery({
+        queryKey: ['coin-list-overview'],
+        queryFn: async () => {
+            const result = await apiService.getCoins(0, limit)
+            return result
+        },
+        enabled: true,
+        // staleTime: 1000 * 60 *1,
+        refetchInterval: 1000 * 10,
+    });
+};

@@ -90,9 +90,6 @@ const CoinList = () => {
         return (
             <View style={styles.centered}>
                 <Text>Error: {error.message}</Text>
-                <TouchableOpacity>
-                    <Text>Reintentar</Text>
-                </TouchableOpacity>
             </View>
         );
     }
