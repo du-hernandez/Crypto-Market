@@ -9,6 +9,7 @@ import { theme } from "@/utils/theme";
 import { ThemeProvider } from "@rneui/themed";
 import { FavoriteCoinsProvider } from '@/context/FavoriteCoins';
 import { Colors } from '@/utils/colors';
+import { StatusBar } from 'expo-status-bar';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -35,6 +36,7 @@ const RootLayout = () => {
             <SafeAreaView style={{ flex: 1, backgroundColor: Colors.primary }}>
                 <ThemeProvider theme={theme}>
                     <FavoriteCoinsProvider>
+                        <StatusBar style="light"/>
                         <Stack screenOptions={{
                             headerStyle: { backgroundColor: Colors.primary },
                             headerTintColor: "#FFF",
