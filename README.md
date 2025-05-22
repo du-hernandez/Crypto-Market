@@ -59,11 +59,11 @@ Below are some screenshots of the Crypto Market app. Each image is named accordi
 
 | Screen             | Screenshot                                               | Description                       |
 |--------------------|----------------------------------------------------------|-----------------------------------|
-| Home               | ![Home](assets/Screenshots/1 - Home page.jpeg)           | Main dashboard with market data   |
-| Market             | ![Market](assets/Screenshots/2 - Coin List.PNG)          | List of cryptocurrencies          |
-| Coin Detail        | ![Coin Detail](assets/Screenshots/3 - Coin Detail.PNG)   | Detailed view of a selected coin  |
-| Favorites          | ![Favorites](assets/Screenshots/4 - Favorite View.PNG)   | User's favorite coins             |
-| About              | ![About](assets/Screenshots/5 - About View.PNG)          | App information and credits       |
+| Home               | ![Home](assets/Screenshots/HomePage.jpeg)           | Main dashboard with market data   |
+| Market             | ![Market](assets/Screenshots/CoinList.PNG)          | List of cryptocurrencies          |
+| Coin Detail        | ![Coin Detail](assets/Screenshots/CoinDetail.PNG)   | Detailed view of a selected coin  |
+| Favorites          | ![Favorites](assets/Screenshots/FavoriteView.PNG)   | User's favorite coins             |
+| About              | ![About](assets/Screenshots/AboutView.PNG)          | App information and credits       |
 
 ## Contributing
 
