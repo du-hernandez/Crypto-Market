@@ -59,11 +59,11 @@ Below are some screenshots of the Crypto Market app. Each image is named accordi
 
 <table>
     <tr>
-        <td><img src="assets/Screenshots/HomePage.jpeg" alt="Home" width="100"/></td>
-        <td><img src="assets/Screenshots/CoinList.PNG" alt="Market" width="100"/></td>
-        <td><img src="assets/Screenshots/CoinDetail.PNG" alt="Coin Detail" width="100"/></td>
-        <td><img src="assets/Screenshots/FavoriteView.PNG" alt="Favorites" width="100"/></td>
-        <td><img src="assets/Screenshots/AboutView.PNG" alt="About" width="100"/></td>
+        <td><img src="assets/Screenshots/HomePage.jpeg" alt="Home" width="110"/></td>
+        <td><img src="assets/Screenshots/CoinList.PNG" alt="Market" width="110"/></td>
+        <td><img src="assets/Screenshots/CoinDetail.PNG" alt="Coin Detail" width="110"/></td>
+        <td><img src="assets/Screenshots/FavoriteView.PNG" alt="Favorites" width="110"/></td>
+        <td><img src="assets/Screenshots/AboutView.PNG" alt="About" width="110"/></td>
     </tr>
 </table>
 
