@@ -49,10 +49,9 @@ Crypto Market is a mobile application that allows users to track cryptocurrency 
 
 - Real-time cryptocurrency market data
 - Detailed coin information and price charts
-- Portfolio management with asset tracking
-- Latest crypto news aggregation
-- Search functionality for coins
-- Customizable settings
+- Latest cryptocurrency news
+- Coin finder
+- Favorite coins
 
 ## Contributing
 
