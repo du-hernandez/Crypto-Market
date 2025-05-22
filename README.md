@@ -57,7 +57,7 @@ Crypto Market is a mobile application that allows users to track cryptocurrency 
 
 Below are some screenshots of the Crypto Market app. Each image is named according to its corresponding screen.
 
-<div style="display: flex; flex-direction: row; gap: 16px; align-items: flex-start;">
+<div style="display: flex; flex-direction: row;">
     <div>
         <img src="assets/Screenshots/HomePage.jpeg" alt="Home" width="100"/>
     </div>
