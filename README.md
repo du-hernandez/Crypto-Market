@@ -55,15 +55,39 @@ Crypto Market is a mobile application that allows users to track cryptocurrency 
 
 ## Screenshots
 
+<div style="display: flex; flex-direction: row; gap: 16px; align-items: flex-start;">
+    <div>
+        <img src="assets/Screenshots/HomePage.jpeg" alt="Home" width="180"/>
+        <p align="center"><b>Home</b></p>
+    </div>
+    <div>
+        <img src="assets/Screenshots/CoinList.PNG" alt="Market" width="180"/>
+        <p align="center"><b>Market</b></p>
+    </div>
+    <div>
+        <img src="assets/Screenshots/CoinDetail.PNG" alt="Coin Detail" width="180"/>
+        <p align="center"><b>Coin Detail</b></p>
+    </div>
+    <div>
+        <img src="assets/Screenshots/FavoriteView.PNG" alt="Favorites" width="180"/>
+        <p align="center"><b>Favorites</b></p>
+    </div>
+    <div>
+        <img src="assets/Screenshots/AboutView.PNG" alt="About" width="180"/>
+        <p align="center"><b>About</b></p>
+    </div>
+</div>
+
+
 Below are some screenshots of the Crypto Market app. Each image is named according to its corresponding screen.
 
 | Screen             | Screenshot                                               | Description                       |
 |--------------------|----------------------------------------------------------|-----------------------------------|
-| Home               | ![Home](assets/Screenshots/HomePage.jpeg)           | Main dashboard with market data   |
-| Market             | ![Market](assets/Screenshots/CoinList.PNG)          | List of cryptocurrencies          |
-| Coin Detail        | ![Coin Detail](assets/Screenshots/CoinDetail.PNG)   | Detailed view of a selected coin  |
-| Favorites          | ![Favorites](assets/Screenshots/FavoriteView.PNG)   | User's favorite coins             |
-| About              | ![About](assets/Screenshots/AboutView.PNG)          | App information and credits       |
+| Home               | ![Home](assets/Screenshots/HomePage.jpeg)                | Main dashboard with market data   |
+| Market             | ![Market](assets/Screenshots/CoinList.PNG)               | List of cryptocurrencies          |
+| Coin Detail        | ![Coin Detail](assets/Screenshots/CoinDetail.PNG)        | Detailed view of a selected coin  |
+| Favorites          | ![Favorites](assets/Screenshots/FavoriteView.PNG)        | User's favorite coins             |
+| About              | ![About](assets/Screenshots/AboutView.PNG)               | App information and credits       |
 
 ## Contributing
 
