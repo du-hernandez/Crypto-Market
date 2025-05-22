@@ -27,25 +27,25 @@ const CryptoDetailAbout = () => {
             <Text style={styles.titleStyles}>Developer info</Text>
 
             <View style={styles.section}>
-                <Text style={{ fontWeight: 'bold', fontSize: 18, marginBottom: 8 }}>
+                <Text style={styles.personalInfo}>
                     Name:
                 </Text>
                 <Text style={{ marginBottom: 12 }}>
                     Duverney Hernandez Mora
                 </Text>
-                <Text style={{ fontWeight: 'bold', fontSize: 18, marginBottom: 8 }}>
+                <Text style={styles.personalInfo}>
                     Email:
                 </Text>
                 <Text style={{ marginBottom: 12 }}>
                     comdujar@gmail.com
                 </Text>
-                <Text style={{ fontWeight: 'bold', fontSize: 18, marginBottom: 8 }}>
+                <Text style={styles.personalInfo}>
                     Location:
                 </Text>
                 <Text style={{ marginBottom: 12 }}>
                     Neiva, Colombia
                 </Text>
-                <Text style={{ fontWeight: 'bold', fontSize: 18, marginBottom: 8 }}>
+                <Text style={styles.personalInfo}>
                     About Me:
                 </Text>
                 <Text>
@@ -68,6 +68,11 @@ const styles = StyleSheet.create({
         padding: 20,
         borderRadius: 10,
         marginHorizontal: 20
+    },
+    personalInfo: {
+        fontWeight: 'bold',
+        fontSize: 18,
+        marginBottom: 8
     }
 })
 
