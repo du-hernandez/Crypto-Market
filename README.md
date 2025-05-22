@@ -3,18 +3,16 @@
 ```
 
 ├── Home
-├── Market
-│   ├── Coin Detail
-│   └── Search
-├── Portfolio
-│   └── Add Asset
-├── News
-├── Settings
+|   └── Market
+|       ├── Coin Detail
+|       └── Search
+├── Favorites
+├── About
 ```
 
 ## Description
 
-Crypto Market is a mobile application that allows users to track real-time cryptocurrency prices, view detailed coin information, manage a personal portfolio, and stay updated with the latest crypto news. The app features an intuitive interface, seamless navigation between screens, and supports both Android and iOS devices via Expo. Users can search for specific coins, add assets to their portfolio, and customize settings for a personalized experience.
+Crypto Market is a mobile application that allows users to track cryptocurrency prices, view detailed information about them, manage favorite coins, and stay up-to-date with the latest market values. The application features an intuitive interface, smooth navigation between screens, and is compatible with Android and iOS devices through Expo. Users can search for specific cryptocurrencies and add favorites for focused tracking.
 
 ## Installation
 
