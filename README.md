@@ -1,7 +1,7 @@
 # Crypto Market
 
 ```
-/
+
 ├── Home
 ├── Market
 │   ├── Coin Detail
